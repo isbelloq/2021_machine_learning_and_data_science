@@ -7,6 +7,9 @@ authors = ["Your Name <you@example.com>"]
 [tool.poetry.dependencies]
 python = "~3.7"
 jupyter-book = "^0.15.1"
+ghp-import = "^2.1.0"
+numpy = "~1.19"
+matplotlib = "~3.2"
 
 [tool.poetry.dev-dependencies]
 

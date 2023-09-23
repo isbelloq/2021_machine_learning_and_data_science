@@ -1,1 +1,3 @@
+.DS_Store
 .venv
+machine_learning_and_data_science/_build/*

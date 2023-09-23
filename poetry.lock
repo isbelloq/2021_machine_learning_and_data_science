@@ -125,6 +125,14 @@ optional = false
 python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*,!=3.6.*,>=2.7"
 
 [[package]]
+name = "cycler"
+version = "0.11.0"
+description = "Composable style cycles"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[[package]]
 name = "debugpy"
 version = "1.7.0"
 description = "An implementation of the Debug Adapter Protocol for Python"
@@ -166,6 +174,20 @@ python-versions = "*"
 
 [package.extras]
 devel = ["colorama", "jsonschema", "json-spec", "pylint", "pytest", "pytest-benchmark", "pytest-cache", "validictory"]
+
+[[package]]
+name = "ghp-import"
+version = "2.1.0"
+description = "Copy your docs directly to the gh-pages branch."
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+python-dateutil = ">=2.8.1"
+
+[package.extras]
+dev = ["twine", "markdown", "flake8", "wheel"]
 
 [[package]]
 name = "greenlet"
@@ -429,6 +451,17 @@ traitlets = "*"
 test = ["ipykernel", "pre-commit", "pytest", "pytest-cov", "pytest-timeout"]
 
 [[package]]
+name = "kiwisolver"
+version = "1.4.5"
+description = "A fast implementation of the Cassowary constraint solver"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+typing-extensions = {version = "*", markers = "python_version < \"3.8\""}
+
+[[package]]
 name = "latexcodec"
 version = "2.0.1"
 description = "A lexer and codec to work with LaTeX code in Python."
@@ -485,6 +518,21 @@ description = "Safely add untrusted strings to HTML/XML markup."
 category = "main"
 optional = false
 python-versions = ">=3.7"
+
+[[package]]
+name = "matplotlib"
+version = "3.2.2"
+description = "Python plotting package"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+cycler = ">=0.10"
+kiwisolver = ">=1.0.1"
+numpy = ">=1.11"
+pyparsing = ">=2.0.1,<2.0.4 || >2.0.4,<2.1.2 || >2.1.2,<2.1.6 || >2.1.6"
+python-dateutil = ">=2.1"
 
 [[package]]
 name = "matplotlib-inline"
@@ -613,6 +661,14 @@ description = "Patch asyncio to allow nested event loops"
 category = "main"
 optional = false
 python-versions = ">=3.5"
+
+[[package]]
+name = "numpy"
+version = "1.19.5"
+description = "NumPy is the fundamental package for array computing with Python."
+category = "main"
+optional = false
+python-versions = ">=3.6"
 
 [[package]]
 name = "packaging"
@@ -760,6 +816,17 @@ python-versions = ">=3.7"
 
 [package.extras]
 plugins = ["importlib-metadata"]
+
+[[package]]
+name = "pyparsing"
+version = "3.1.1"
+description = "pyparsing module - Classes and methods to define and execute parsing grammars"
+category = "main"
+optional = false
+python-versions = ">=3.6.8"
+
+[package.extras]
+diagrams = ["railroad-diagrams", "jinja2"]
 
 [[package]]
 name = "pyrsistent"
@@ -1245,7 +1312,7 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "flake8 (<5)", "pytest-co
 [metadata]
 lock-version = "1.1"
 python-versions = "~3.7"
-content-hash = "8ac00a767b1072f68f240c0fe34fe1b4e9210f639e7c5b6238d1038b63676e0c"
+content-hash = "cb56fd7e89efe7180999839dccb096794cae5b37421427635a26c85e95de652e"
 
 [metadata.files]
 accessible-pygments = []
@@ -1260,11 +1327,13 @@ cffi = []
 charset-normalizer = []
 click = []
 colorama = []
+cycler = []
 debugpy = []
 decorator = []
 docutils = []
 entrypoints = []
 fastjsonschema = []
+ghp-import = []
 greenlet = []
 idna = []
 imagesize = []
@@ -1279,10 +1348,12 @@ jupyter-book = []
 jupyter-cache = []
 jupyter-client = []
 jupyter-core = []
+kiwisolver = []
 latexcodec = []
 linkify-it-py = []
 markdown-it-py = []
 markupsafe = []
+matplotlib = []
 matplotlib-inline = []
 mdit-py-plugins = []
 mdurl = []
@@ -1291,6 +1362,7 @@ myst-parser = []
 nbclient = []
 nbformat = []
 nest-asyncio = []
+numpy = []
 packaging = []
 parso = []
 pexpect = []
@@ -1304,6 +1376,7 @@ pybtex-docutils = []
 pycparser = []
 pydata-sphinx-theme = []
 pygments = []
+pyparsing = []
 pyrsistent = []
 python-dateutil = []
 pytz = []

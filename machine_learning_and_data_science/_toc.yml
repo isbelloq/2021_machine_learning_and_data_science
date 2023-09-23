@@ -2,8 +2,8 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
-root: intro
-chapters:
-- file: markdown
-- file: notebooks
-- file: markdown-notebooks
+root: docs/intro
+parts:
+  - caption: Análisis y Visualización de Datos con Python
+    chapters:
+      - file: docs/01_analisis_y_visualizacion/00_introduccion/00_introduccion_a_jupyter_notebooks.ipynb
