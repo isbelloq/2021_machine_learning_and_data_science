@@ -1,0 +1,835 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Introducción a Jupyter Notebooks &#8212; Machine Learning And Data Science</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '01_analisis_y_visualizacion/00_introduccion/00_introduccion_a_jupyter_notebooks';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="Machine Learning and Data Science" href="../../intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Machine Learning And Data Science</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Machine Learning and Data Science
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Análisis y Visualización de Datos con Python</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Introducción a <em>Jupyter Notebooks</em></strong></a></li>
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/isbelloq/2021_machine_learning_and_data_science" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/isbelloq/2021_machine_learning_and_data_science/issues/new?title=Issue%20on%20page%20%2F01_analisis_y_visualizacion/00_introduccion/00_introduccion_a_jupyter_notebooks.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/01_analisis_y_visualizacion/00_introduccion/00_introduccion_a_jupyter_notebooks.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Introducción a Jupyter Notebooks</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Introducción a <em>Jupyter Notebooks</em></strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#celdas-de-texto"><strong>1. Celdas de Texto</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#markdown"><em><strong>Markdown</strong></em></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#este-es-un-titulo">Este es un título</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#los-numerales">Los numerales</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indican-el-tamano">indican el tamaño</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#del-titulo-y">del título y</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#son-usados-por-colab">son usados por Colab</a><ul class="nav section-nav flex-column">
+<li class="toc-h6 nav-item toc-entry"><a class="reference internal nav-link" href="#en-su-tabla-de-contenido">en su tabla de contenido.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#latex"><em><strong>LaTeX</strong></em></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#html"><strong>HTML</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#celdas-de-codigo"><strong>2. Celdas de Código</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#completado-de-codigo-y-ayuda"><strong>3. Completado de Código y Ayuda</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instalar-otra-biblioteca"><strong>Instalar otra biblioteca</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recursos-adicionales"><strong>4. Recursos adicionales</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creditos"><strong>Créditos</strong></a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="introduccion-a-jupyter-notebooks">
+<h1><strong>Introducción a <em>Jupyter Notebooks</em></strong><a class="headerlink" href="#introduccion-a-jupyter-notebooks" title="Permalink to this heading">#</a></h1>
+<hr class="docutils" />
+<p>Los <em>notebooks</em> de <a class="reference external" href="https://jupyter.org/">Jupyter</a> son documentos con un entorno computacional interactivo integrado, que permiten organizar y ejecutar código fuente de lenguajes de programación como <em>Python</em> o <em>R</em>. En otras palabras, podemos pensar en un <em>notebook</em> como una “página web enriquecida” donde vamos a poder tomar apuntes en forma de texto, títulos, imágenes, enlaces web, y lo más importante, vamos a poder ejecutar código fuente de forma interactiva.</p>
+<p>Esto es posible con el uso de <em>kernels</em>, software que provee soporte a un lenguaje de programación específico. En el transcurso del programa de formación virtual en <em>Machine Learning and Data Science</em> de la Universidad Nacional de Colombia se trabajará con el kernel de <a class="reference external" href="https://ipython.org/">IPython</a> para <a class="reference external" href="https://www.python.org/">Python 3</a>.</p>
+<p>Estos documentos funcionan con la ejecución de aplicaciones web, que controlan y permiten la interacción con el sistema operativo. Para ejecutar estas aplicaciones se consideran dos escenarios:</p>
+<ol class="arabic simple">
+<li><p>Con software ejecutado en una máquina local como un computador.</p></li>
+<li><p>En la nube mediante plataformas especializadas.</p></li>
+</ol>
+<p>Para una mayor flexibilidad y personalización se pueden configurar entornos de desarrollo (como <a class="reference external" href="https://code.visualstudio.com/">Visual Studio Code</a> o <a class="reference external" href="https://www.jetbrains.com/pycharm/">PyCharm</a>) para el desarrollo de <em>notebooks</em> de <em>Jupyter</em> con añadidos como la compleción de código o herramientas para depurar y ejecutar sus programas.</p>
+<p>En el segundo caso, para trabajar en la nube, se recomienda trabajar con <a class="reference external" href="https://colab.research.google.com/notebooks/intro.ipynb"><em>Google Colaboratory</em></a> o simplemente <em>Colab</em>, un entorno gratuito de <em>notebooks</em> basados en <em>Jupyter</em> que no requiere configuración y se ejecuta completamente en la nube. Adicionalmente, es posible acceder a entornos computacionales avanzados por  con hardware especializado GPU o TPU, gracias a la infraestructura computacional que ofrece <em>Google Cloud Platform</em>.</p>
+<section id="celdas-de-texto">
+<h2><strong>1. Celdas de Texto</strong><a class="headerlink" href="#celdas-de-texto" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>El primer tipo de celda es uno con el que ya ha interactuado en el transcurso de este material. Se trata de las <strong>celdas de texto</strong>, con las que podremos dar estructura y forma a la presentación de nuestro <em>notebook</em>.</p>
+<p>Las celdas de texto usan sintaxis propia de un lenguaje de marcado que permite combinar texto con código de lenguajes como <em>HTML</em> o <em>LaTex</em>. El lenguaje utilizado se llama <em>Markdown</em>, el cual tiene ligeras diferencias entre sus versiones para <em>Jupyter</em> y <em>Colab</em>. Se trata de una especificación ligera para la escritura de contenido HTML. Si quiere conocer más acerca de este lenguaje, lo invitamos a consultar su documentación y guía de inicio de <span class="xref myst">markdown</span>.</p>
+<section id="markdown">
+<h3><em><strong>Markdown</strong></em><a class="headerlink" href="#markdown" title="Permalink to this heading">#</a></h3>
+<hr class="docutils" />
+<p>A continuación, se presentan algunos ejemplos de celdas de texto comunes. Puede dar <strong>doble-click</strong> en cada celda para conocer y editar su contenido. Luego, hacer <strong>clic</strong> por fuera de la celda para ver su resultado.</p>
+<p>Haga <strong>doble clic</strong> aquí para ver el código fuente de esta celda:</p>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="este-es-un-titulo">
+<h1>Este es un título<a class="headerlink" href="#este-es-un-titulo" title="Permalink to this heading">#</a></h1>
+<section id="los-numerales">
+<h2>Los numerales<a class="headerlink" href="#los-numerales" title="Permalink to this heading">#</a></h2>
+<section id="indican-el-tamano">
+<h3>indican el tamaño<a class="headerlink" href="#indican-el-tamano" title="Permalink to this heading">#</a></h3>
+<section id="del-titulo-y">
+<h4>del título y<a class="headerlink" href="#del-titulo-y" title="Permalink to this heading">#</a></h4>
+<section id="son-usados-por-colab">
+<h5>son usados por Colab<a class="headerlink" href="#son-usados-por-colab" title="Permalink to this heading">#</a></h5>
+<section id="en-su-tabla-de-contenido">
+<h6>en su tabla de contenido.<a class="headerlink" href="#en-su-tabla-de-contenido" title="Permalink to this heading">#</a></h6>
+<p>Se pueden usar separadores horizontales así:</p>
+<hr class="docutils" />
+<p>o así:</p>
+<hr class="docutils" />
+<p>Este es texto normal.</p>
+<p><em>Se pueden hacer cursivas</em> <strong>y negrillas.</strong>
+<em>También se puede</em> con <strong>barra al piso.</strong>
+y <strong><em>combinados</em></strong> <em><strong>de varias</strong></em> <em><strong>maneras</strong></em></p>
+<p>Se puede usar texto con estilo de código en una línea: <code class="docutils literal notranslate"><span class="pre">!python</span> <span class="pre">--version</span></code></p>
+<p>O como un bloque:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">hello_world</span><span class="p">():</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello World!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Incluso en negrilla: <strong><code class="docutils literal notranslate"><span class="pre">print(&quot;Hello</span> <span class="pre">World!&quot;)</span></code></strong></p>
+<blockquote>
+<div><p>Se puede definir bloques de texto en formato de cita.</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>Se pueden</p></li>
+<li><p>definir</p></li>
+<li><p>listas sin orden</p></li>
+</ul>
+<ol class="arabic simple">
+<li><p>Y también</p></li>
+<li><p>listas</p></li>
+<li><p>ordenadas</p></li>
+</ol>
+<ul class="simple">
+<li><p>Incluso</p></li>
+<li><p>anidadas</p></li>
+<li><p>usando la indentación.</p></li>
+</ul>
+<p>También se pueden agregar enlaces a <a class="reference external" href="https://www.python.org/">sitios web</a></p>
+<p>o agregar imágenes</p>
+<p><img alt="Python logo" src="https://www.python.org/static/community_logos/python-logo-master-v3-TM.png" /></p>
+</section>
+</section>
+</section>
+</section>
+<section id="latex">
+<h3><em><strong>LaTeX</strong></em><a class="headerlink" href="#latex" title="Permalink to this heading">#</a></h3>
+<hr class="docutils" />
+<p><a class="reference external" href="http://www.latex-project.org/">LaTeX</a> es el lenguaje más conocido para escribir expresiones especiales como fórmulas matemáticas. Para incluir fórmulas u otras expresiones matemáticas se escribe una expresión en lenguaje LaTeX entre un par de signos  <strong>$</strong> .</p>
+<p>Por ejemplo <code class="docutils literal notranslate"><span class="pre">$\sqrt{3x-1}+(1+x)^2$</span></code> se visualiza así:</p>
+<p><span class="math notranslate nohighlight">\(\sqrt{3x-1}+(1+x)^2.\)</span></p>
+</section>
+<section id="html">
+<h3><strong>HTML</strong><a class="headerlink" href="#html" title="Permalink to this heading">#</a></h3>
+<hr class="docutils" />
+<p>Otra funcionalidad muy importante de los Jupyter Notebook es su integración con el lenguaje <a class="reference external" href="https://developer.mozilla.org/es/docs/Web/HTML">HTML</a>, usado en de documentos de hipertexto para páginas web. Si bien <em>Markdown</em> admite HTML, en <em>Colab</em> a veces es necesario emplear celdas de código (se verán en la siguiente sección) mediante la etiqueta <code class="docutils literal notranslate"><span class="pre">%%html</span></code>. En la mayoría de los casos, <em>Markdown</em> es suficiente para la disposición de la mayoría de los recursos audiovisuales, como imágenes o tablas.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%html</span>
+<span class="p">&lt;</span><span class="nt">marquee</span> <span class="na">direction </span><span class="o">=</span> <span class="s">&quot;left&quot;</span> <span class="na">scrollamount</span><span class="o">=</span><span class="s">&quot;20&quot;</span> <span class="na">onmouseover</span><span class="o">=</span><span class="s">&quot;stop()&quot;</span> <span class="na">onmouseout</span><span class="o">=</span><span class="s">&quot;start()&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h1</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;color: #ff9900; text-align: center&quot;</span><span class="p">&gt;</span> Esta es una introducción a los Jupyter Notebook<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h2</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;color: #ff9900; text-align: center&quot;</span><span class="p">&gt;</span> Programa de formación en Machine Learning and Data Science<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h2</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;color: #ff9900; text-align: center&quot;</span><span class="p">&gt;</span> Universidad Nacional de Colombia<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">img</span> <span class="na">style </span><span class="o">=</span> <span class="s">&quot;display: block; margin-left: auto; margin-right: auto;&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://colab.research.google.com/img/colab_favicon.ico&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;200&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;200&quot;</span><span class="p">/&gt;</span>
+<span class="p">&lt;/</span><span class="nt">marquee</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><marquee direction = "left" scrollamount="20" onmouseover="stop()" onmouseout="start()">
+    <h1 style="color: #ff9900; text-align: center"> Esta es una introducción a los Jupyter Notebook</h1>
+    <h2 style="color: #ff9900; text-align: center"> Programa de formación en Machine Learning and Data Science</h2>
+    <h2 style="color: #ff9900; text-align: center"> Universidad Nacional de Colombia</h2>
+    <img style = "display: block; margin-left: auto; margin-right: auto;" src="https://colab.research.google.com/img/colab_favicon.ico" width="200" height="200"/>
+</marquee>
+</div></div>
+</div>
+</section>
+</section>
+<section id="celdas-de-codigo">
+<h2><strong>2. Celdas de Código</strong><a class="headerlink" href="#celdas-de-codigo" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>El otro tipo de celda permitida en los <em>Notebooks</em> es la <strong>celda de código</strong>.</p>
+<p>Estas celdas permiten escribir código fuente en el lenguaje de programación que soporte el <em>kernel</em> empleado. En la esquina superior derecha se indicará que el entorno de ejecución está conectado, o en su defecto le dará la opción para conectarse (haciendo clic en “Conectar”). Este material, y el resto de los materiales presentados en los dos primeros módulos, está diseñado para ser ejecutado en el lenguaje de programación <strong><em>Python</em> 3.6 o superior</strong>.</p>
+<p>Los <em>notebooks</em> ofrecen una gran flexibilidad de interacción, al permitir acciones como la carga y descarga de archivos, el uso de entrada del teclado y la presentación de contenido multimedia como texto, imágenes y videos. Usted puede ejecutar el código de una celda con el botón de <em>play</em> (al costado izquierdo de la celda en Colab), el botón <em>Run</em> (En la barra de herramientas en Jupyter) o mediante la combinación de teclas <strong>Shift+Enter</strong>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ejecute esta celda con el botón de ejecutar o la combinación de teclado Shift + Enter.</span>
+<span class="o">!</span>python<span class="w"> </span>--version
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Python 3.7.17
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Definicion variable</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">4</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
+</div>
+<p>Se puede escribir un programa completo como el presentado a continuación. No se preocupe si no entiende lo que está escrito, simplemente ejecute la celda y siga las instrucciones. En los próximos materiales se realizará un taller del lenguaje de programación <em>Python</em> donde entenderá los principios de programación de computadores necesarios para el desarrollo de este programa de formación.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">nombre</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Por favor, ingrese su nombre.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;¡Hola </span><span class="si">{</span><span class="n">nombre</span><span class="si">}</span><span class="s2">!</span><span class="se">\n</span><span class="s2">Le damos la bienvenida al programa de formación en Machine Learning y Data Science.&quot;</span><span class="p">)</span>
+
+<span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">conjunto</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+<span class="k">while</span><span class="p">(</span><span class="n">total</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">):</span>
+    <span class="n">fruta</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Ingrese el nombre de una fruta. </span><span class="si">{</span><span class="mi">5</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">total</span><span class="si">}</span><span class="s2"> restantes.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">conjunto</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">fruta</span><span class="p">)</span>
+
+    <span class="n">total</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">conjunto</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Ha ingresado </span><span class="si">{</span><span class="n">total</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="s1">&#39;fruta&#39;</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">total</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">&#39;frutas&#39;</span><span class="si">}</span><span class="s2"> distintas.&quot;</span><span class="p">)</span>
+
+<span class="n">frutas</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">conjunto</span><span class="p">)</span>
+<span class="n">frutas</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Estas son las frutas que ingresó ordenadas alfabéticamente.&quot;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">fruta</span> <span class="ow">in</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\t</span><span class="si">{</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2">.</span><span class="se">\t</span><span class="s2"> </span><span class="si">{</span><span class="n">frutas</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">frutas</span><span class="p">))]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">fruta</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">k0</span><span class="o">/</span><span class="n">k1ptdl95457___jzhps_pq4r8286v9</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_49534</span><span class="o">/</span><span class="mf">554469672.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">nombre</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Por favor, ingrese su nombre.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;¡Hola </span><span class="si">{</span><span class="n">nombre</span><span class="si">}</span><span class="s2">!</span><span class="se">\n</span><span class="s2">Le damos la bienvenida al programa de formación en Machine Learning y Data Science.&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> 
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="nn">~/Documents/personal_repos/2021_machine_learning_and_data_science/.venv/lib/python3.7/site-packages/ipykernel/kernelbase.py</span> in <span class="ni">raw_input</span><span class="nt">(self, prompt)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1173</span>         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allow_stdin</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1174</span>             <span class="k">raise</span> <span class="n">StdinNotImplementedError</span><span class="p">(</span>
+<span class="ne">-&gt; </span><span class="mi">1175</span>                 <span class="s2">&quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1176</span>             <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1177</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_input_request</span><span class="p">(</span>
+
+<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Las variables declaradas se conservan entre celdas.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">frutas</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Fresa&#39;, &#39;Limon&#39;, &#39;Papaya&#39;, &#39;Piña&#39;, &#39;Uva&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Incluso, y como veremos más adelante en el módulo, es posible realizar visualizaciones más complejas dentro de los <em>notebooks</em>. Por ejemplo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="n">y</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">))]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Gráfica de ejemplo&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/f145660bf0d6f2270ca4a86a52373952af1af4c3b55212193a1daec37cf8e8e1.png" src="../../_images/f145660bf0d6f2270ca4a86a52373952af1af4c3b55212193a1daec37cf8e8e1.png" />
+</div>
+</div>
+</section>
+<section id="completado-de-codigo-y-ayuda">
+<h2><strong>3. Completado de Código y Ayuda</strong><a class="headerlink" href="#completado-de-codigo-y-ayuda" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Los <em>Jupyter Notebook</em> cuentan con una herramienta de auto-completado.</p>
+<p>Por ejemplo importemos el módulo <a class="reference external" href="https://numpy.org/">NumPy</a> (se discutirá en detalle en los demás materiales de la primera unidad) con el alias de <strong>np</strong>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Luego, escriba <code class="docutils literal notranslate"><span class="pre">np.random.</span></code> (Desde <em>Jupyter</em> presione <strong>Tab</strong>.). Debería ver las opciones posibles de auto-completado para <code class="docutils literal notranslate"><span class="pre">np.random</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Para abrir la documentación completa de un módulo sólo debe presionar  <strong>Shift+Enter</strong> sobre una celda de código con el nombre del paquete a explorar seguido de  <strong>?</strong>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>np.random.randint<span class="o">?</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="instalar-otra-biblioteca">
+<h3><strong>Instalar otra biblioteca</strong><a class="headerlink" href="#instalar-otra-biblioteca" title="Permalink to this heading">#</a></h3>
+<hr class="docutils" />
+<p>El entorno de ejecución de <em>Jupyter</em> permite ejecutar comandos del sistema operativo mediante el símbolo <strong>%</strong>. Por ejemplo, para instalar módulos o librerías específicas de Python se utiliza el comando <strong><code class="docutils literal notranslate"><span class="pre">pip</span></code></strong>. La secuencia de comandos <strong><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span></code></strong> permite especificar el módulo que se desea instalar.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pip</span> install numpy
+</pre></div>
+</div>
+</div>
+</div>
+<p>La librería se instaló correctamente. Esta funcionalidad será muy importante más adelante en el curso.</p>
+</section>
+</section>
+<section id="recursos-adicionales">
+<h2><strong>4. Recursos adicionales</strong><a class="headerlink" href="#recursos-adicionales" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<ul class="simple">
+<li><p><a class="reference external" href="https://colab.research.google.com/notebooks/intro.ipynb">Introducción a <em>Google Colaboratory</em> (notebooks)</a></p></li>
+<li><p><a class="reference external" href="https://colab.research.google.com/notebooks/markdown_guide.ipynb">Guía de Markdown</a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/"><em>Python</em> 3: documentación oficial.</a></p></li>
+</ul>
+</section>
+<section id="creditos">
+<h2><strong>Créditos</strong><a class="headerlink" href="#creditos" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Profesor:</strong> <a class="reference external" href="https://dis.unal.edu.co/~ferestrepoca/">Felipe Restrepo Calle</a></p></li>
+<li><p><strong>Asistentes docentes:</strong></p>
+<ul>
+<li><p>Alberto Nicolai Romero Martínez</p></li>
+<li><p>Miguel Angel Ortiz Marín</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Universidad Nacional de Colombia</strong> - <em>Facultad de Ingeniería</em></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./01_analisis_y_visualizacion/00_introduccion"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../../intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Machine Learning and Data Science</p>
+      </div>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Introducción a <em>Jupyter Notebooks</em></strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#celdas-de-texto"><strong>1. Celdas de Texto</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#markdown"><em><strong>Markdown</strong></em></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#este-es-un-titulo">Este es un título</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#los-numerales">Los numerales</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indican-el-tamano">indican el tamaño</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#del-titulo-y">del título y</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#son-usados-por-colab">son usados por Colab</a><ul class="nav section-nav flex-column">
+<li class="toc-h6 nav-item toc-entry"><a class="reference internal nav-link" href="#en-su-tabla-de-contenido">en su tabla de contenido.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#latex"><em><strong>LaTeX</strong></em></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#html"><strong>HTML</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#celdas-de-codigo"><strong>2. Celdas de Código</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#completado-de-codigo-y-ayuda"><strong>3. Completado de Código y Ayuda</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instalar-otra-biblioteca"><strong>Instalar otra biblioteca</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recursos-adicionales"><strong>4. Recursos adicionales</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creditos"><strong>Créditos</strong></a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Santiago Bello
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
