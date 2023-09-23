@@ -41,7 +41,7 @@ for fruta in [f"\t{i + 1}.\t {frutas[i]}" for i in range(len(frutas))]:
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mStdinNotImplementedError[0m                  Traceback (most recent call last)
-[0;32m/var/folders/k0/k1ptdl95457___jzhps_pq4r8286v9/T/ipykernel_49534/554469672.py[0m in [0;36m<module>[0;34m[0m
+[0;32m/var/folders/k0/k1ptdl95457___jzhps_pq4r8286v9/T/ipykernel_53392/554469672.py[0m in [0;36m<module>[0;34m[0m
 [1;32m      1[0m [0mx[0m [0;34m=[0m [0;36m1[0m[0;34m[0m[0;34m[0m[0m
 [0;32m----> 2[0;31m [0mnombre[0m [0;34m=[0m [0minput[0m[0;34m([0m[0;34m"Por favor, ingrese su nombre.\n"[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0m[1;32m      3[0m [0mprint[0m[0;34m([0m[0;34mf"¡Hola {nombre}!\nLe damos la bienvenida al programa de formación en Machine Learning y Data Science."[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
