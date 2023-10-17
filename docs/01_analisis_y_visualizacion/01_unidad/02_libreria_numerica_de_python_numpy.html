@@ -66,6 +66,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/01_analisis_y_visualizacion/01_unidad/02_libreria_numerica_de_python_numpy';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="prev" title="Lenguaje de programación Python" href="01_lenguaje_de_programacion_python.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -151,10 +152,11 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Análisis y Visualización de Datos con Python</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../00_introduccion/00_introduccion_a_jupyter_notebooks.html"><strong>Introducción a <em>Jupyter Notebooks</em></strong></a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="01_lenguaje_de_programacion_python.html"><strong>Lenguaje de programación Python</strong></a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Librería numérica de <em>Python</em>: <em>NumPy</em></strong></a></li>
 </ul>
 
     </div>
@@ -378,8 +380,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <p><img src = "https://drive.google.com/uc?export=view&id=1zD1_7Y4Ejud8OsuQb49rHGfl9qhihAh5" alt = "Encabezado MLDS" width = "100%">  </img></p>
-<section class="tex2jax_ignore mathjax_ignore" id="libreria-numerica-de-python-numpy">
+  <section class="tex2jax_ignore mathjax_ignore" id="libreria-numerica-de-python-numpy">
 <h1><strong>Librería numérica de <em>Python</em>: <em>NumPy</em></strong><a class="headerlink" href="#libreria-numerica-de-python-numpy" title="Permalink to this heading">#</a></h1>
 <hr class="docutils" />
 <p><img src = "https://raw.githubusercontent.com/numpy/numpy/master/branding/logo/primary/numpylogo.png" alt = "NumPy logo" width = "70%">  </img></p>
@@ -398,7 +399,7 @@ Contiene funcionalidades de:</p>
 <h2><strong>1. Importar <em>NumPy</em></strong><a class="headerlink" href="#importar-numpy" title="Permalink to this heading">#</a></h2>
 <hr class="docutils" />
 <p><em>NumPy</em> viene instalado por defecto en la mayoría de las distribuciones de <em>Python</em>, en especial en aquellas orientadas a la computación científica. Una vez <em>NumPy</em> esté instalado, se puede importar como una librería para su ejecución en código de <em>Python</em>. Esto se puede hacer de las siguientes maneras:</p>
-<p><strong>1.1. Importar <em>NumPy</em> con el alias <code class="docutils literal notranslate"><span class="pre">np</span></code></strong>: Es una práctica común en la comunidad de desarrolladores importar <em>NumPy</em> con el alias <strong><code class="docutils literal notranslate"><span class="pre">np</span></code></strong> en sus llamados en código, y es incluso utilizado de esta forma en su <a class="reference external" href="https://numpy.org/devdocs/user/quickstart.html">documentación oficial</a>. Esta va a ser la forma utilizada en el desarrollo de este tutorial y materiales futuros.</p>
+<p><strong>1.1. Importar <em>NumPy</em> con el alias <code class="docutils literal notranslate"><span class="pre">np</span></code></strong>: Es una práctica común en la comunidad de desarrolladores importar <em>NumPy</em> con el alias <strong><code class="docutils literal notranslate"><span class="pre">np</span></code></strong> en sus llamados en código, y es incluso utilizado de esta forma en su <a class="reference external" href="https://numpy.org/doc/1.19/user/quickstart.html">documentación oficial</a>. Esta va a ser la forma utilizada en el desarrollo de este tutorial y materiales futuros.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -442,7 +443,7 @@ Contiene funcionalidades de:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#El símbolo * indica a Python que importe todos los métodos y atributos de NumPy</span>
-<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="o">*</span>     
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="o">*</span>
 </pre></div>
 </div>
 </div>
@@ -450,7 +451,7 @@ Contiene funcionalidades de:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Se pueden importar por separado los elementos con comas (,).</span>
-<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">array</span><span class="p">,</span> <span class="n">arange</span>   
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">array</span><span class="p">,</span> <span class="n">arange</span>
 </pre></div>
 </div>
 </div>
@@ -463,28 +464,6 @@ Contiene funcionalidades de:</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array(None, dtype=object)
-</pre></div>
-</div>
-</div>
-</div>
-<p>Este material se realizó con las siguientes versiones:</p>
-<ul class="simple">
-<li><p><em>Python</em>: 3.6.9</p></li>
-<li><p><em>NumPy</em>:  1.19.5</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Versión de Python y NumPy</span>
-<span class="o">!</span>python<span class="w"> </span>--version
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;NumPy&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Python 3.7.17
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NumPy 1.19.5
 </pre></div>
 </div>
 </div>
@@ -523,15 +502,11 @@ Contiene funcionalidades de:</p>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Con tuplas</span>
 <span class="n">tupla</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="mi">3</span><span class="p">)</span>
-<span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">tupla</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">tupla</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">object</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/sbello/Documents/personal_repos/2021_machine_learning_and_data_science/.venv/lib/python3.7/site-packages/ipykernel_launcher.py:3: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify &#39;dtype=object&#39; when creating the ndarray
-  This is separate from the ipykernel package so we can avoid doing imports until
-</pre></div>
-</div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1, list([1, 2, 3]), 3], dtype=object)
 </pre></div>
 </div>
@@ -693,18 +668,14 @@ A continuación, se presentan algunos de los nombres usados para los tipos de da
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">np.nan</span></code></strong>: Sigla del inglés <em>not a number</em>. Este tipo de dato se le otorga a los elementos de un arreglo numérico que no pueden ser interpretados como un resultado numérico. Se usa por lo general para indicar la presencia de valores faltantes o que deberían ser ignorados. Para arreglos no numéricos esto se hace con el tipo <strong><code class="docutils literal notranslate"><span class="pre">None</span></code></strong> de <em>Python</em>.</p></li>
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">np.object</span></code></strong>: <em>NumPy</em> admite el uso de los tipos de datos genéricos de <em>Python</em>. <strong><code class="docutils literal notranslate"><span class="pre">numpy.object</span></code></strong> es el tipo genérico para cualquier dato que no corresponda con estas primitivas. Esta regla aplica para listas, conjuntos, entre otros.</p></li>
 </ul>
-<p>Para más información, consulte la <a class="reference external" href="https://numpy.org/devdocs/reference/arrays.dtypes.html">entrada de la documentación oficial</a> referente a los tipos de dato <strong><code class="docutils literal notranslate"><span class="pre">dtype</span></code></strong>.</p>
+<p>Para más información, consulte la <a class="reference external" href="https://numpy.org/doc/1.19/reference/arrays.dtypes.html">entrada de la documentación oficial</a> referente a los tipos de dato <strong><code class="docutils literal notranslate"><span class="pre">dtype</span></code></strong>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="s1">&#39;051.2&#39;</span><span class="p">,</span> <span class="s1">&#39;027.0&#39;</span><span class="p">,</span> <span class="s1">&#39;233.7&#39;</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">number</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="s1">&#39;051.2&#39;</span><span class="p">,</span> <span class="s1">&#39;027.0&#39;</span><span class="p">,</span> <span class="s1">&#39;233.7&#39;</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/sbello/Documents/personal_repos/2021_machine_learning_and_data_science/.venv/lib/python3.7/site-packages/ipykernel_launcher.py:1: DeprecationWarning: Converting `np.inexact` or `np.floating` to a dtype is deprecated. The current result is `float64` which is not strictly correct.
-  &quot;&quot;&quot;Entry point for launching an IPython kernel.
-</pre></div>
-</div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 51.2,  27. , 233.7])
 </pre></div>
 </div>
@@ -714,7 +685,7 @@ A continuación, se presentan algunos de los nombres usados para los tipos de da
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># NumPy también admite la especificación de dtypes con cadenas de texto</span>
 
-<span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="s1">&#39;001&#39;</span><span class="p">,</span> <span class="s1">&#39;002&#39;</span><span class="p">,</span> <span class="s1">&#39;003&#39;</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="s2">&quot;int&quot;</span><span class="p">)</span> 
+<span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="s1">&#39;001&#39;</span><span class="p">,</span> <span class="s1">&#39;002&#39;</span><span class="p">,</span> <span class="s1">&#39;003&#39;</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="s2">&quot;int&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1266,7 +1237,7 @@ A continuación, se presentan algunos de los nombres usados para los tipos de da
 </div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">()</span>  
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1355,7 +1326,7 @@ Genera números enteros aleatorios desde el primer parámetro (incluido) hasta e
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1528,19 +1499,19 @@ Genera números enteros aleatorios desde el primer parámetro (incluido) hasta e
 <span class="n">m</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="n">arr2d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span><span class="n">m</span><span class="p">))</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-  <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
-    <span class="n">arr2d</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="o">*</span> <span class="p">(</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-    
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+        <span class="n">arr2d</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="n">j</span>
+
 <span class="n">arr2d</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 1.,  2.,  3.,  4.,  5.],
-       [ 2.,  4.,  6.,  8., 10.],
-       [ 3.,  6.,  9., 12., 15.],
-       [ 4.,  8., 12., 16., 20.],
-       [ 5., 10., 15., 20., 25.]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0., 1., 2., 3., 4.],
+       [1., 2., 3., 4., 5.],
+       [2., 3., 4., 5., 6.],
+       [3., 4., 5., 6., 7.],
+       [4., 5., 6., 7., 8.]])
 </pre></div>
 </div>
 </div>
@@ -1553,8 +1524,8 @@ Genera números enteros aleatorios desde el primer parámetro (incluido) hasta e
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[16., 20.],
-       [20., 25.]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[6., 7.],
+       [7., 8.]])
 </pre></div>
 </div>
 </div>
@@ -1595,9 +1566,9 @@ Genera números enteros aleatorios desde el primer parámetro (incluido) hasta e
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tomar el primer elemento de la primera dimensión </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tomar el primer elemento de la primera dimensión</span>
 <span class="c1"># (Es decir, la primera matriz)</span>
-<span class="n">arr_3d</span><span class="p">[</span><span class="mi">0</span><span class="p">,:,:]</span>
+<span class="n">arr_3d</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:]</span>
 </pre></div>
 </div>
 </div>
@@ -1611,7 +1582,7 @@ Genera números enteros aleatorios desde el primer parámetro (incluido) hasta e
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Traer la primera fila de las 2 submatrices</span>
-<span class="n">arr_3d</span><span class="p">[:,</span><span class="mi">0</span><span class="p">,:]</span>
+<span class="n">arr_3d</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">:]</span>
 </pre></div>
 </div>
 </div>
@@ -1625,7 +1596,7 @@ Genera números enteros aleatorios desde el primer parámetro (incluido) hasta e
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Traer la última fila de las 2 submatrices</span>
-<span class="n">arr_3d</span><span class="p">[:,</span><span class="o">-</span><span class="mi">1</span><span class="p">,:]</span>
+<span class="n">arr_3d</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span>
 </pre></div>
 </div>
 </div>
@@ -1639,7 +1610,7 @@ Genera números enteros aleatorios desde el primer parámetro (incluido) hasta e
 <p>Además del indexado natural presentado hasta el momento, los arreglos de <em>NumPy</em> aceptan colecciones de enteros que representan las filas o columnas que se desean retornar por cada dimensión. Esto se conoce como <em>fancy indexing</em> o indexado elegante.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">121</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">121</span><span class="p">)</span>
 <span class="n">arr</span>
 </pre></div>
 </div>
@@ -1655,7 +1626,7 @@ Genera números enteros aleatorios desde el primer parámetro (incluido) hasta e
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Obtener elementos también en cualquier orden</span>
 <span class="c1"># Los elementos de la lista corresponden a los índices a los cuales se quiere acceder, en ese orden</span>
-<span class="n">arr</span><span class="p">[[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span> 
+<span class="n">arr</span><span class="p">[[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span>
 </pre></div>
 </div>
 </div>
@@ -1670,8 +1641,8 @@ Genera números enteros aleatorios desde el primer parámetro (incluido) hasta e
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Inicialización de una matriz con comprensión de listas</span>
 <span class="n">n</span> <span class="o">=</span> <span class="mi">8</span>
 <span class="n">m</span> <span class="o">=</span> <span class="mi">8</span>
-<span class="n">arr2d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">n</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">)])</span>
-  
+<span class="n">arr2d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">n</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">)])</span>
+
 <span class="n">arr2d</span>
 </pre></div>
 </div>
@@ -1692,7 +1663,7 @@ Genera números enteros aleatorios desde el primer parámetro (incluido) hasta e
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Obtener elementos de la matriz en cualquier orden</span>
-<span class="n">arr2d</span><span class="p">[[</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">],:]</span>
+<span class="n">arr2d</span><span class="p">[[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">:]</span>
 </pre></div>
 </div>
 </div>
@@ -1708,7 +1679,7 @@ Genera números enteros aleatorios desde el primer parámetro (incluido) hasta e
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr2d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
 
-<span class="n">arr2d</span><span class="p">[:,[</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">7</span><span class="p">]]</span>
+<span class="n">arr2d</span><span class="p">[:,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">]]</span>
 </pre></div>
 </div>
 </div>
@@ -1727,7 +1698,7 @@ Genera números enteros aleatorios desde el primer parámetro (incluido) hasta e
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">4</span><span class="p">)[:,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">]]</span> <span class="c1">#Matriz identidad con dos columnas cambiadas.</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">4</span><span class="p">)[:,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]</span> <span class="c1">#Matriz identidad con dos columnas cambiadas.</span>
 </pre></div>
 </div>
 </div>
@@ -1750,30 +1721,17 @@ Genera números enteros aleatorios desde el primer parámetro (incluido) hasta e
 </li>
 <li><p>El arreglo producido en el paso anterior es ingresado como el índice del arreglo. De esta forma se accede a los elementos que cumplieran la condición lógica definida con el operador del primer paso.</p></li>
 </ol>
-<p>En la siguiente animación se presenta el proceso realizado en el arreglo con la selección condicional.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title **Seleccion condicional (animación)**</span>
-<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
-
-<span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&lt;iframe style=&quot;width:768px; height: 432px;&quot; src=&quot;https://drive.google.com/file/d/1XVtMyJcD4ZlinXAg7GvOc82o0WpvjuCA/preview&quot;&gt;&lt;/iframe&gt;&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/sbello/Documents/personal_repos/2021_machine_learning_and_data_science/.venv/lib/python3.7/site-packages/IPython/core/display.py:724: UserWarning: Consider using IPython.display.IFrame instead
-  warnings.warn(&quot;Consider using IPython.display.IFrame instead&quot;)
-</pre></div>
-</div>
-<div class="output text_html"><iframe style="width:768px; height: 432px;" src="https://drive.google.com/file/d/1XVtMyJcD4ZlinXAg7GvOc82o0WpvjuCA/preview"></iframe></div></div>
-</div>
 <p>Veamos el ejemplo en código, paso por paso:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span>  <span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">],</span>
-              <span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>  <span class="mi">1</span><span class="p">],</span>
-              <span class="p">[</span> <span class="mi">0</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">],</span>
-              <span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span>  <span class="mi">4</span><span class="p">]])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="p">[</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span>  <span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">],</span>
+        <span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>  <span class="mi">1</span><span class="p">],</span>
+        <span class="p">[</span> <span class="mi">0</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">],</span>
+        <span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span>  <span class="mi">4</span><span class="p">]</span>
+    <span class="p">]</span>
+<span class="p">)</span>
 
 <span class="n">A</span>
 </pre></div>
@@ -1811,7 +1769,7 @@ Genera números enteros aleatorios desde el primer parámetro (incluido) hasta e
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Se usa la expresión anterior directamente en el arreglo</span>
 <span class="c1"># Si las dimensiones no permiten crear una matriz, se retorna un arreglo plano.</span>
-<span class="n">A</span><span class="p">[</span><span class="n">A</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">]</span> 
+<span class="n">A</span><span class="p">[</span><span class="n">A</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -1843,7 +1801,7 @@ Genera números enteros aleatorios desde el primer parámetro (incluido) hasta e
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Usando condiciones más complejas</span>
-<span class="n">A</span><span class="p">[(</span><span class="n">A</span><span class="o">&gt;</span><span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">A</span><span class="o">&lt;</span><span class="mi">4</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">50</span> 
+<span class="n">A</span><span class="p">[(</span><span class="n">A</span><span class="o">&gt;</span><span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">A</span><span class="o">&lt;</span><span class="mi">4</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">50</span>
 
 <span class="n">A</span>
 </pre></div>
@@ -1861,7 +1819,7 @@ Genera números enteros aleatorios desde el primer parámetro (incluido) hasta e
 <p>Nótese que en este caso se utiliza el operador <strong><code class="docutils literal notranslate"><span class="pre">&amp;</span></code></strong> (<em>bitwise and</em>) y no el operador lógico <strong><code class="docutils literal notranslate"><span class="pre">and</span></code></strong>. En el caso de una “or” lógica, el operador correcto en este caso sería <strong><code class="docutils literal notranslate"><span class="pre">|</span></code></strong> en lugar de <strong><code class="docutils literal notranslate"><span class="pre">or</span></code></strong>. Por último, la negación se obtiene con <strong><code class="docutils literal notranslate"><span class="pre">~</span></code></strong> en vez de <strong><code class="docutils literal notranslate"><span class="pre">not</span></code></strong>. Veamos algunos ejemplos:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">[(</span><span class="n">A</span><span class="o">&gt;=</span><span class="mi">50</span><span class="p">)</span> <span class="o">|</span><span class="p">(</span><span class="n">A</span><span class="o">==</span><span class="mi">0</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">2</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">[(</span><span class="n">A</span><span class="o">&gt;=</span><span class="mi">50</span><span class="p">)</span> <span class="o">|</span><span class="p">(</span><span class="n">A</span><span class="o">==</span><span class="mi">0</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="n">A</span>
 </pre></div>
 </div>
@@ -1877,7 +1835,7 @@ Genera números enteros aleatorios desde el primer parámetro (incluido) hasta e
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">[</span><span class="o">~</span><span class="p">(</span><span class="n">A</span><span class="o">&lt;</span><span class="mi">3</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">100</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">[</span><span class="o">~</span><span class="p">(</span><span class="n">A</span><span class="o">&lt;</span><span class="mi">3</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">100</span>
 <span class="n">A</span>
 </pre></div>
 </div>
@@ -2074,7 +2032,7 @@ Genera números enteros aleatorios desde el primer parámetro (incluido) hasta e
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
 <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 
 <span class="n">a</span> <span class="o">-</span> <span class="n">b</span>
@@ -2105,7 +2063,7 @@ Genera números enteros aleatorios desde el primer parámetro (incluido) hasta e
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">((</span><span class="mi">7</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="mi">10</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">((</span><span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="mi">10</span><span class="p">)</span>
 <span class="n">d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 
 <span class="n">c</span> <span class="o">-</span> <span class="n">d</span>
@@ -2144,7 +2102,7 @@ Genera números enteros aleatorios desde el primer parámetro (incluido) hasta e
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
 <span class="n">b</span>
 </pre></div>
 </div>
@@ -2191,12 +2149,12 @@ Genera números enteros aleatorios desde el primer parámetro (incluido) hasta e
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ls_a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 <span class="n">ls_b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">]</span>
 
-<span class="n">ls_a</span>
+<span class="n">ls_a</span><span class="p">,</span> <span class="n">ls_b</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>([1, 2, 3], [10, 20, 30])
 </pre></div>
 </div>
 </div>
@@ -2219,7 +2177,18 @@ Genera números enteros aleatorios desde el primer parámetro (incluido) hasta e
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># La multiplicación entre listas no está permitida.</span>
-<span class="c1">#ls_a * ls_b # Si se descomenta esta sentencia saldrá un error</span>
+<span class="n">ls_a</span> <span class="o">*</span> <span class="n">ls_b</span> <span class="c1"># Si se descomenta esta sentencia saldrá un error</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">k0</span><span class="o">/</span><span class="n">k1ptdl95457___jzhps_pq4r8286v9</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_80967</span><span class="o">/</span><span class="mf">3196884061.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># La multiplicación entre listas no está permitida.</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">ls_a</span> <span class="o">*</span> <span class="n">ls_b</span> <span class="c1"># Si se descomenta esta sentencia saldrá un error</span>
+
+<span class="ne">TypeError</span>: can&#39;t multiply sequence by non-int of type &#39;list&#39;
 </pre></div>
 </div>
 </div>
@@ -2283,7 +2252,7 @@ Genera números enteros aleatorios desde el primer parámetro (incluido) hasta e
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
 <span class="n">a</span>
 </pre></div>
 </div>
@@ -2298,7 +2267,7 @@ Genera números enteros aleatorios desde el primer parámetro (incluido) hasta e
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span> <span class="o">*</span> <span class="mi">10</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span> <span class="o">*</span> <span class="mi">10</span>
 <span class="n">b</span>
 </pre></div>
 </div>
@@ -2386,7 +2355,7 @@ Genera números enteros aleatorios desde el primer parámetro (incluido) hasta e
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 
 <span class="n">a</span> <span class="o">@</span> <span class="n">b</span>
 </pre></div>
@@ -2404,7 +2373,18 @@ Genera números enteros aleatorios desde el primer parámetro (incluido) hasta e
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># La ultima dimensión del primero deben coincidir o se produce un error</span>
-<span class="c1">#b @ a # Si se descomenta esta sentencia saldrá un error</span>
+<span class="n">b</span> <span class="o">@</span> <span class="n">a</span> <span class="c1"># Si se descomenta esta sentencia saldrá un error</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">k0</span><span class="o">/</span><span class="n">k1ptdl95457___jzhps_pq4r8286v9</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_78665</span><span class="o">/</span><span class="mf">811521937.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># La ultima dimensión del primero deben coincidir o se produce un error</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">b</span> <span class="o">@</span> <span class="n">a</span> <span class="c1"># Si se descomenta esta sentencia saldrá un error</span>
+
+<span class="nn">ValueError: matmul: Input operand 1 has a mismatch</span> in <span class="ni">its core dimension 0, with gufunc signature (n?,k),(k,m?)-&gt;(n?,m?) </span><span class="nt">(size 4 is different from 3)</span>
 </pre></div>
 </div>
 </div>
@@ -2435,7 +2415,7 @@ Genera números enteros aleatorios desde el primer parámetro (incluido) hasta e
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
 <span class="n">a</span>
 </pre></div>
 </div>
@@ -2539,7 +2519,7 @@ Genera números enteros aleatorios desde el primer parámetro (incluido) hasta e
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -2658,12 +2638,6 @@ Genera números enteros aleatorios desde el primer parámetro (incluido) hasta e
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[   1,    3,    6,   10,   15,   21,   28],
-       [   1,    2,    6,   24,  120,  720, 5040]])
-</pre></div>
-</div>
-</div>
 </div>
 <ul class="simple">
 <li><p><strong>Funciones estadísticas <code class="docutils literal notranslate"><span class="pre">arr.mean()</span></code>|<code class="docutils literal notranslate"><span class="pre">arr.std()</span></code> | <code class="docutils literal notranslate"><span class="pre">arr.var()</span></code></strong>: <em>NumPy</em> permite realizar cálculos estadísticos básicos, como la media aritmética, la desviación estándar y la varianza. Estas estadísticas descriptivas y otras más se discutirán en la <strong>Unidad 2</strong> con la librería <em>pandas</em>.</p></li>
@@ -2779,7 +2753,7 @@ Genera números enteros aleatorios desde el primer parámetro (incluido) hasta e
 </ul>
 </li>
 </ul>
-<p>Puede consultar la lista completa en este <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/ufuncs.html">enlace</a>.</p>
+<p>Puede consultar la lista completa en este <a class="reference external" href="https://numpy.org/doc/1.19/reference/ufuncs.html">enlace</a>.</p>
 </section>
 <section id="transformacion-de-arreglos">
 <h3><strong>5.3. Transformación de arreglos</strong><a class="headerlink" href="#transformacion-de-arreglos" title="Permalink to this heading">#</a></h3>
@@ -2830,7 +2804,7 @@ Genera números enteros aleatorios desde el primer parámetro (incluido) hasta e
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Si se desea, se puede reasignar la variable con el nuevo arreglo.</span>
-<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span> 
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2864,7 +2838,7 @@ Genera números enteros aleatorios desde el primer parámetro (incluido) hasta e
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Crear un arreglo con un nuevo tamaño con el contenido del original</span>
-<span class="n">np</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">np</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -2892,7 +2866,7 @@ Genera números enteros aleatorios desde el primer parámetro (incluido) hasta e
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
 <span class="n">arr</span>
 </pre></div>
 </div>
@@ -2969,7 +2943,7 @@ Genera números enteros aleatorios desde el primer parámetro (incluido) hasta e
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -2986,7 +2960,7 @@ Genera números enteros aleatorios desde el primer parámetro (incluido) hasta e
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -3027,7 +3001,7 @@ Genera números enteros aleatorios desde el primer parámetro (incluido) hasta e
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
 <span class="n">arr</span>
 </pre></div>
 </div>
@@ -3134,7 +3108,7 @@ Genera números enteros aleatorios desde el primer parámetro (incluido) hasta e
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 <span class="n">a</span>
 </pre></div>
 </div>
@@ -3148,7 +3122,7 @@ Genera números enteros aleatorios desde el primer parámetro (incluido) hasta e
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 <span class="n">b</span>
 </pre></div>
 </div>
@@ -3230,7 +3204,7 @@ Genera números enteros aleatorios desde el primer parámetro (incluido) hasta e
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ab</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">)])</span> <span class="c1">#Se aceptan colecciones de otros tipos, como listas o tuplas</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ab</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)])</span> <span class="c1">#Se aceptan colecciones de otros tipos, como listas o tuplas</span>
 <span class="n">ab</span>
 </pre></div>
 </div>
@@ -3259,7 +3233,7 @@ Genera números enteros aleatorios desde el primer parámetro (incluido) hasta e
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a2d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">b2d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">b2d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
 
 <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="n">a2d</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="n">b2d</span><span class="o">.</span><span class="n">shape</span><span class="p">}</span>
 </pre></div>
@@ -3311,7 +3285,7 @@ Genera números enteros aleatorios desde el primer parámetro (incluido) hasta e
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
 <span class="n">a</span>
 </pre></div>
 </div>
@@ -3328,7 +3302,7 @@ Genera números enteros aleatorios desde el primer parámetro (incluido) hasta e
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
 <span class="n">b</span>
 </pre></div>
 </div>
@@ -3497,7 +3471,7 @@ Genera números enteros aleatorios desde el primer parámetro (incluido) hasta e
 <p>La separación se realizó efectivamente. Sin embargo, si se fuera a modificar el contenido de alguna de las mitades surge un efecto inesperado:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">izq</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">120</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">izq</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">120</span>
 <span class="n">izq</span>
 </pre></div>
 </div>
@@ -3586,7 +3560,7 @@ Genera números enteros aleatorios desde el primer parámetro (incluido) hasta e
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">64</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">64</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
 
 <span class="n">arr</span>
 </pre></div>
@@ -3652,7 +3626,7 @@ Genera números enteros aleatorios desde el primer parámetro (incluido) hasta e
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -3722,7 +3696,7 @@ Genera números enteros aleatorios desde el primer parámetro (incluido) hasta e
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">100</span><span class="p">,(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
 <span class="n">arr</span>
 </pre></div>
 </div>
@@ -3856,7 +3830,7 @@ Genera números enteros aleatorios desde el primer parámetro (incluido) hasta e
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Con arreglos de 1-D</span>
-<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 <span class="n">arr</span>
 </pre></div>
 </div>
@@ -3888,7 +3862,7 @@ Genera números enteros aleatorios desde el primer parámetro (incluido) hasta e
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Con arreglos de 2-D</span>
-<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="n">arr</span>
 </pre></div>
 </div>
@@ -3954,28 +3928,28 @@ Genera números enteros aleatorios desde el primer parámetro (incluido) hasta e
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">dtype</span> <span class="o">=</span> <span class="nb">int</span><span class="p">)]</span>
-<span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">j</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">nditer</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">,</span><span class="si">{</span><span class="n">j</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">nditer</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">j</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0,1
-1,0
-2,0
-3,0
-0,0
-1,1
-2,0
-3,0
-0,0
-1,0
-2,1
-3,0
-0,0
-1,0
-2,0
-3,1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0, 1
+1, 0
+2, 0
+3, 0
+0, 0
+1, 1
+2, 0
+3, 0
+0, 0
+1, 0
+2, 1
+3, 0
+0, 0
+1, 0
+2, 0
+3, 1
 </pre></div>
 </div>
 </div>
@@ -3984,7 +3958,7 @@ Genera números enteros aleatorios desde el primer parámetro (incluido) hasta e
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Iterar sobre el par de coordenadas x,y</span>
-<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]])</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]])</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
 </pre></div>
@@ -4020,7 +3994,7 @@ Fila: 2 Col: 1 Valor: 6
 <section id="recursos-adicionales">
 <h2><strong>Recursos adicionales</strong><a class="headerlink" href="#recursos-adicionales" title="Permalink to this heading">#</a></h2>
 <hr class="docutils" />
-<p>En este material se consideran algunas de las funciones más comunes, pero quedan otras por fuera del alcance. Lo invitamos a que consulte la <a class="reference external" href="https://numpy.org/doc/stable/reference/index.html">documentación oficial</a>, o librerías similares del ámbito científico como <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/"><em>SciPy</em></a> en busca de funciones que se ajusten a las necesidades de su problema. De igual forma, a continuación se presenta una lista de recursos adicionales que le serán de utilidad:</p>
+<p>En este material se consideran algunas de las funciones más comunes, pero quedan otras por fuera del alcance. Lo invitamos a que consulte la <a class="reference external" href="https://numpy.org/doc/1.19/reference/index.html">documentación oficial</a>, o librerías similares del ámbito científico como <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/"><em>SciPy</em></a> en busca de funciones que se ajusten a las necesidades de su problema. De igual forma, a continuación se presenta una lista de recursos adicionales que le serán de utilidad:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://numpy.org/">NumPy Home page</a></p></li>
 <li><p><a class="reference external" href="https://docs.scipy.org/doc/numpy/user/quickstart.html">NumPy Quickstart tutorial</a></p></li>
@@ -4078,6 +4052,15 @@ Fila: 2 Col: 1 Valor: 6
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="01_lenguaje_de_programacion_python.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><strong>Lenguaje de programación Python</strong></p>
+      </div>
+    </a>
 </div></div>
   
 </div>
