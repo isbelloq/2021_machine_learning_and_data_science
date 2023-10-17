@@ -8,3 +8,4 @@ parts:
     chapters:
       - file: docs/01_analisis_y_visualizacion/00_introduccion/00_introduccion_a_jupyter_notebooks.ipynb
       - file: docs/01_analisis_y_visualizacion/01_unidad/01_lenguaje_de_programacion_python.ipynb
+      - file: docs/01_analisis_y_visualizacion/01_unidad/02_libreria_numerica_de_python_numpy.ipynb
